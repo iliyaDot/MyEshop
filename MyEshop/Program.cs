@@ -20,6 +20,7 @@ builder.Services.AddDbContext<MyEshopContext>(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline
+app.UseStaticFiles();  //This line is required for serving static files (CSS, JS)
 app.UseRouting();
 app.UseAuthorization();
 
