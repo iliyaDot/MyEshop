@@ -1,41 +1,41 @@
-﻿using MyEshop.Models;
+﻿//using MyEshop.Models;
 
-namespace MyEshop.Data.Repositories
-{
-    public interface IUserRepository
-    {
-        bool IsExistUserByEmail(string email);
-        void AddUser(Users user);
+//namespace MyEshop.Data.Repositories
+//{
+//    public interface IUserRepository
+//    {
+//        bool IsExistUserByEmail(string email);
+//        void AddUser(Users user);
 
-        Users GetUserForLogin(string email, string password);
-    }
+//        Users GetUserForLogin(string email, string password);
+//    }
 
-    public class UserRepository : IUserRepository
-    {
+//    public class UserRepository : IUserRepository
+//    {
 
 
-        private MyEshopContext _context;
+//        private MyEshopContext _context;
 
-        public UserRepository(MyEshopContext context)
-        {
-            _context = context;
-        }
-        public void AddUser(Users user)
-        {
+//        public UserRepository(MyEshopContext context)
+//        {
+//            _context = context;
+//        }
+//        public void AddUser(Users user)
+//        {
 
-            _context.Add(user);
-            _context.SaveChanges();
+//            _context.Add(user);
+//            _context.SaveChanges();
 
-        }
+//        }
 
-        public Users GetUserForLogin(string email, string password)
-        {
-            return _context.Users.SingleOrDefault(u => u.Email == email && u.Password == password);
-        }
+//        public Users GetUserForLogin(string email, string password)
+//        {
+//            return _context.Users.SingleOrDefault(u => u.Email == email && u.Password == password);
+//        }
 
-        public bool IsExistUserByEmail(string email)
-        {
-            return _context.Users.Any(u => u.Email == email);
-        }
-    }
-}
+//        public bool IsExistUserByEmail(string email)
+//        {
+//            return _context.Users.Any(u => u.Email == email);
+//        }
+//    }
+//}
